@@ -1,0 +1,65 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App with Local Storage</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Todo App with Local Storage</h1>
+
+      <form class="todo-form">
+        <input type="text" id="todo-input" placeholder="Add a Todo..." />
+        <button type="submit" onclick="addTodo()" id="addButton">Add</button>
+      </form>
+
+      <ul id="todo-list">
+        <p id="list"></p>
+      </ul>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+  
+  <script>
+    var items = JSON.parse(localStorage.getItem("todo-list")) || [];
+    function addTodo() {
+    var inputBox = document.querySelector("#todo-input");
+    var item = inputBox.value;
+    if (item === "")
+        return (document.getElementById("list").innerHTML =
+        "You need to put in a number");
+    items.push({
+        value: item,
+    });
+
+    localStorage.setItem("todo-list", JSON.stringify(items));
+    listItems();
+    inputBox.value = "";
+    }
+
+    function deleteItem(index) {
+        items.splice(index, 1);
+        localStorage.setItem("todo-list", JSON.stringify(items));
+        listItems();
+    }
+
+    function listItems() {
+    var list = "";
+    for (var i = 0; i < items.length; i++) {
+        list += "<li>";
+        list += items[i].value + " ";
+        list +=
+        "<span onclick='deleteItem(" +
+        i +
+        ")'><button class='remove'>Remove</button></span></li>";
+    }
+    document.querySelector("#todo-list").innerHTML = list;
+    }
+
+    (function () {
+    listItems();
+    })();
+  </script>
+</html>
