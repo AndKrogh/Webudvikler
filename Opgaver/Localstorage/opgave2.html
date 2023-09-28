@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        margin: 0;
+    }
+
+    #theme {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .dark-mode-toggle {
+        background: #000;
+        color: #fff;
+    }
+
+    .dark-mode-theme {
+        background: #000;
+        color: #fff;
+        }
+</style>
+<body>
+    <div id="theme">
+      <button id="toggle-btn" class="dark-mode-toggle">Toggle dark mode</button>
+    </div>
+</body>
+<script>
+
+
+const toggleBtn = document.getElementById("toggle-btn");
+const theme = document.getElementById("theme");
+let darkMode = localStorage.getItem("dark-mode");
+
+const enableDarkMode = () => {
+  theme.classList.add("dark-mode-theme");
+  toggleBtn.classList.remove("dark-mode-toggle");
+  localStorage.setItem("dark-mode", "enabled");
+};
+
+const disableDarkMode = () => {
+  theme.classList.remove("dark-mode-theme");
+  toggleBtn.classList.add("dark-mode-toggle");
+  localStorage.setItem("dark-mode", "disabled");
+};
+
+if (darkMode === "enabled") {
+  enableDarkMode(); // set state of darkMode on page load
+}
+
+toggleBtn.addEventListener("click", (e) => {
+  darkMode = localStorage.getItem("dark-mode"); // update darkMode when clicked
+  if (darkMode === "disabled") {
+    enableDarkMode();
+  } else {
+    disableDarkMode();
+  }
+});
+
+</script>
+</html>
