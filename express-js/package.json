@@ -1,0 +1,22 @@
+{
+  "name": "express",
+  "version": "0.0.1",
+  "description": "ojgpregjeprgjre",
+  "main": "server/index.js",
+  "scripts": {
+    "dev": "nodemon server/index.js",
+    "prod": "node server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express",
+    "test",
+    "server"
+  ],
+  "author": "Hr. Krogh",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^3.0.1"
+  }
+}
