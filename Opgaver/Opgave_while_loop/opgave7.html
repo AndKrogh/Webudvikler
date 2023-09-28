@@ -1,0 +1,23 @@
+
+<script>
+    let i = "";
+    let a = 0;
+    let username = "hej";
+    let password = 123;
+    doIsOver = false;
+    
+    do {
+        i = prompt("Brugernavn","");
+        a = prompt("Adgangskode", "");
+        if(i === null) break;
+        if(a === null) break;
+
+        if(i == username && a == password) {
+            alert("Login succesful");
+        } else {
+            alert("Password or login isnt correct");
+        }
+    
+    }
+    while(!doIsOver);
+    </script>

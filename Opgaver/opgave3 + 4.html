@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div  id="imgDiv">
+        <img src="https://source.unsplash.com/random/200x200?sig=1" alt="" id="img">
+    </div>
+    <button id="btn"> Change image</button>
+    <button onclick="myFunction()" id="hide"> Show/hide</button>
+
+    
+    <script>
+        let myImg = document.querySelector("img");
+        let btnElement = document.querySelector("#btn");
+        
+        btnElement.addEventListener("click", function() {
+            myImg.src = "https://source.unsplash.com/random/200x200?sig=2"; 
+        });
+
+        function myFunction() {
+            var x = document.getElementById("imgDiv");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        };
+
+    </script>
+</body>
+</html>
