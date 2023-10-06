@@ -11,6 +11,6 @@ Webdocker webserver:
 sudo apt upgrade - opgraderer
 sudo n lts - latest node version
 bash - kommer ind på den nyeste version/når ikke at registrere/registrere det
-git clone (git link)
+git clone (git link) - cloner git repository
 history - liste over kommandoer
 ssh-keygen - laver en ssh nøgle
