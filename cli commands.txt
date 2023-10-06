@@ -12,3 +12,4 @@ sudo apt upgrade - opgraderer
 sudo n lts - latest node version
 bash - kommer ind på den nyeste version/når ikke at registrere/registrere det
 git clone (git link)
+history - liste over kommandoer
