@@ -2,18 +2,20 @@ module.exports = {
 
     
     myPromise: function (resource) {
-        new Promise((resolve,reject) => {
+        return new Promise((resolve, reject) => {
             fetch(`https://jsonplaceholder.typicode.com/${resource}`,{})
             .then((res)=> res.json())
-            /* .then((res) => {
+            .then((res) => resolve(res))
+            .catch((err) => reject(err));
+           /*  .then((res) => {
                 return res.json();
-            }) */
+            })
             .then((res) => {
                 console.log(res);
             })
             .catch((err) => {
                 console.log('catch', err);
-            });
+            }); */
         });
     }
 };
