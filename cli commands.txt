@@ -3,3 +3,4 @@ new-item - lav dokument
 ls - hvis filer
 ls lah - hvis filer mere uddybende
 cat -catch fil
+node (..filnavn) - kører dokumentet i cli
