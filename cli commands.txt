@@ -1,0 +1,5 @@
+mkdir - lav mappe
+new-item - lav dokument
+ls - hvis filer
+ls lah - hvis filer mere uddybende
+cat -catch fil
