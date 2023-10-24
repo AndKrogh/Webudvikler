@@ -1,9 +1,9 @@
 {
   "development": {
     "username": "root",
-    "password": null,
-    "database": "lisbeth_hest_torsdag",
-    "host": "127.0.0.1",
+    "password": "zob4hSbUGSAM",
+    "database": "kubelab_dev",
+    "host": "webdeveloper.vps.webdock.cloud",
     "dialect": "mysql"
   },
   "test": {
