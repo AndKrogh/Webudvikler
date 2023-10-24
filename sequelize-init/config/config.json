@@ -4,7 +4,7 @@
     "password": null,
     "database": "lisbeth_hest_torsdag",
     "host": "127.0.0.1",
-    "dialect": "mssql"
+    "dialect": "mysql"
   },
   "test": {
     "username": "root",
