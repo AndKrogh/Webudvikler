@@ -10,7 +10,16 @@ const messages = ref("");
 const clickButton = () => {
     inputText.value = true;
     textArray.value.push(messages.value);
+
+    messages.value = "";
 }
+
+const deleteItem = (index) => {
+    console.log(index);
+    console.log(textArray.value);
+    textArray.value.splice(index);
+};
+
 
 </script>
 
@@ -25,8 +34,9 @@ const clickButton = () => {
         </p>
         <hr>
         <ul>
-            <li v-for="text in textArray">
+            <li v-for="(text, index) in textArray" >
                 {{ text }}
+                <button @click="deleteItem(index)">Delete</button>
             </li>
         </ul>
     </div> 
