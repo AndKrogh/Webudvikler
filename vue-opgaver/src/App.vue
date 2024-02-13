@@ -1,6 +1,7 @@
 <script setup>
 import Templating from './components/Template.vue'
 import UserInput from './components/User_input.vue'
+import UserData from './components/UserData.vue'
 </script>
 
 <template>
@@ -9,6 +10,8 @@ import UserInput from './components/User_input.vue'
     <Templating/>
     <hr>
     <UserInput/>
+    <hr>
+    <UserData/>
 </template>
 
 <style scoped>
