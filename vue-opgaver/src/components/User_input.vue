@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue';
+import UserList from './UserListItems.vue';
 
 const savedArr = localStorage.length;
 console.log(savedArr);
@@ -10,9 +11,7 @@ const inputText = ref();
 const textArray = ref([savedMsg]);
 
 
-
 const messages = ref("");
-
 
 
 //ViewModel 
@@ -29,36 +28,18 @@ const clickButton = () => {
     messages.value = "";
 }
 
-const deleteItem = (index) => {
-    console.log(savedArr);
-    textArray.value.splice(index);
-    localStorage.removeItem(savedArr + index);
-};
-
-const clearAll = (index) => {
-    localStorage.clear();
-    textArray.value.splice(index);
-};
-
-
 </script>
 
 <template>
     
     <div>
         <input type="text" v-model="messages" placeholder="text">
-        <button @click="clickButton(id)"> send</button>
+        <button @click="clickButton()"> send</button>
         <hr>
         <p v-if="inputText">
             {{ messages }}
         </p>
         <hr>
-        <ul >
-            <li v-for="(text, index) in textArray" >
-                <p> {{ text }} <button @click="deleteItem(index)">Delete</button></p>
-                
-            </li>
-        </ul>
-        <button @click="clearAll(index)">Clear all</button>
+        <UserList/>
     </div> 
 </template>
