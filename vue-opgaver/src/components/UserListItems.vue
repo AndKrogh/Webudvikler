@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue';
 
+
 const savedArr = localStorage.length;
 console.log(savedArr);
 const savedMsg = localStorage.getItem(savedArr + 1);
@@ -8,12 +9,10 @@ console.log(savedMsg);
 
 const textArray = ref([savedMsg]);
 
-
-
-const deleteItem = (index) => {
-    console.log(savedArr);
+const deleteItem = async (index) => {
+    console.log(index);
     textArray.value.splice(index);
-    localStorage.removeItem(savedArr + index);
+    localStorage.removeItem(savedArr + 1);
 };
 
 const clearAll = (index) => {

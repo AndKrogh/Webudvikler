@@ -2,6 +2,8 @@
 import { ref } from 'vue';
 import UserList from './UserListItems.vue';
 
+
+
 const savedArr = localStorage.length;
 console.log(savedArr);
 const savedMsg = localStorage.getItem(savedArr + 1);
@@ -18,12 +20,10 @@ const messages = ref("");
 const clickButton = () => {
     inputText.value = true;
     textArray.value.push(messages.value);
-    console.log(textArray.value.length);   
+    console.log(textArray.value);   
     for (let i = 0; i < textArray.value.length; i++) {
-        console.log(textArray.value[i]);
         localStorage.setItem(textArray.value.length, textArray.value[i]);
     }
-    
 
     messages.value = "";
 }
