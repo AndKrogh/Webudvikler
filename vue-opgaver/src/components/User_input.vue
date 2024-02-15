@@ -5,9 +5,9 @@ import UserList from './UserListItems.vue';
 
 
 const savedArr = localStorage.length;
-console.log(savedArr);
+/* console.log(savedArr); */
 const savedMsg = localStorage.getItem(savedArr + 1);
-console.log(savedMsg);
+/* console.log(savedMsg); */
 
 const inputText = ref();
 const textArray = ref([savedMsg]);
@@ -40,6 +40,6 @@ const clickButton = () => {
             {{ messages }}
         </p>
         <hr>
-        <UserList/>
+        <UserList :textArray ="textArray"/>
     </div> 
 </template>

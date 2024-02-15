@@ -1,23 +1,26 @@
 <script setup>
-import { ref } from 'vue';
 
+const props = defineProps({
+    textArray: Array
+})
+
+console.log(props.textArray);
 
 const savedArr = localStorage.length;
-console.log(savedArr);
+/* console.log(savedArr); */
 const savedMsg = localStorage.getItem(savedArr + 1);
-console.log(savedMsg);
+/* console.log(savedMsg); */
 
-const textArray = ref([savedMsg]);
 
 const deleteItem = async (index) => {
-    console.log(index);
-    textArray.value.splice(index);
+   /*  console.log(index); */
+    props.textArray.splice(index);
     localStorage.removeItem(savedArr + 1);
 };
 
 const clearAll = (index) => {
     localStorage.clear();
-    textArray.value.splice(index);
+    props.textArray.splice(index);
 };
 
 
