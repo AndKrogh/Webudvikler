@@ -1,6 +1,6 @@
 <template>
     <div v-for="user in users" :key="user.firstname">
-    <h1>welcome {{ $route.params.userid}}</h1>
+    <h1>welcome {{ user.firstname }}</h1>
     <p>The user is {{ $route.params.userid }}</p>
     <router-link :to="{ name: 'userProfileView', params: {userid: user.firstname} }"> click </router-link>
     </div>
