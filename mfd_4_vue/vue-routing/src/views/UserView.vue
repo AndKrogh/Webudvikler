@@ -1,9 +1,5 @@
 <template>
-    <div v-for="user in users" :key="user.firstname">
-    <h1>welcome {{ user.firstname }}</h1>
-    <router-link :to="{ name: 'UserView', params: {userid: user.firstname} }"> click </router-link>
-    </div>
-   
+  <p>The user is {{ $route.params.userid }}</p>
 </template>
 
 <script setup>
@@ -36,5 +32,6 @@
 		"lastname": "Jensen"
 	}
 }
+
 
 </script>
