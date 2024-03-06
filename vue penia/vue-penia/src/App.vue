@@ -1,19 +1,16 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterLink, RouterView } from "vue-router";
 </script>
 
 <template>
   <header>
-
     <div class="wrapper">
-     
       <h1>ShoeShavvy</h1>
       <nav>
-        
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/AllProductsView">Products</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/about">contact</RouterLink>
+        <RouterLink to="/CartView">Cart</RouterLink>
+        <RouterLink to="/AdminView">Admin</RouterLink>
       </nav>
     </div>
   </header>
@@ -22,7 +19,6 @@ import { RouterLink, RouterView } from 'vue-router'
 </template>
 
 <style scoped>
-
 .wrapper {
   display: flex;
   justify-content: space-between;
@@ -47,8 +43,7 @@ nav {
   margin: 0;
   padding: 0;
   display: flex;
-  
-  }
+}
 
 a {
   color: aquamarine;
@@ -56,5 +51,4 @@ a {
   padding: 14px 16px;
   text-decoration: none;
 }
-
 </style>
