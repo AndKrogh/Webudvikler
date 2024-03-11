@@ -22,6 +22,7 @@ import { useProductStore } from "@/stores/product";
 const productStore = useProductStore();
 
 const productsArr = JSON.parse(JSON.stringify(productStore.products));
+console.log(productsArr)
 
 </script>
 

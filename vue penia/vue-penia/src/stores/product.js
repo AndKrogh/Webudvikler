@@ -1,19 +1,17 @@
 import { defineStore } from "pinia";
-import { useLocalStorage } from '@vueuse/core'
+import { useStorage  } from '@vueuse/core'
 
 export const useProductStore = defineStore({
   id: "product",
   state: () => ({
-    products: useLocalStorage('products', []),
+    products: useStorage ('products', []),
   }),
   actions: {
     addProduct(product) {
       this.products.push(product);
     },
     removeProduct(productId) {
-      this.products = this.products.filter(
-        (product) => product.name !== productId
-      );
+      this.products.splice(productId, 1)
     }   
   },
 });
