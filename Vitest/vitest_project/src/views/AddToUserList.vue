@@ -1,7 +1,7 @@
 <template>
   <div>
     <input v-model="newUserName" type="text" placeholder="Enter new user name" />
-    <button @click="addUser">Add User</button>
+    <button @click="addUser" >Add User</button>
   </div>
 </template>
 
