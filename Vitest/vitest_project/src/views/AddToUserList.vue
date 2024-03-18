@@ -6,14 +6,18 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, defineExpose } from "vue";
 
-const users = ref([]);
+const users = ref([{name: "hej"}]);
 const newUserName = ref("");
 
 const addUser = () => {
    users.value.push({  name: newUserName.value.trim() });
    console.log(users);
 };
+
+console.log(users); 
+
+defineExpose({ users });
 
 </script>

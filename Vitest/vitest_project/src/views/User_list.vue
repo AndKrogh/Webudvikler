@@ -8,20 +8,18 @@
         <button @click="deleteUser(index)">Delete</button>
       </div>
     </div>
-    <addUser :users ="users"/>
+    <addUser ref="childUsers"/>
   </div>
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import addUser from "./AddToUserList.vue"
 
-const users = ref([
-
-]);
+const users = ref([]);
+const childUsers = ref(null);
 
 console.log(users);
-
 
 const deleteUser = (index) => {
   users.value.splice(index, 1);
@@ -33,6 +31,14 @@ const editUser = (index) => {
     users.value[index].name = newName.trim();
   }
 };
+
+onMounted(() => {
+  childUsers.value = users.value;
+  console.log(childUsers.value);
+});
+
+
+
 </script>
 
 <style scoped>
