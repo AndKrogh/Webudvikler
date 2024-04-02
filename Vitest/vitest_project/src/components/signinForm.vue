@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue';
-import { signIn } from '@/services/AuthServices';
+import { signIn } from '@/services/AuthService';
 
 const email = ref('');
 const password = ref('');
