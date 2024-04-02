@@ -1,9 +1,13 @@
 /* import '@/';
 import {
-    getAuth, signInWithEmailAndPassword,
+    getAuth, signInWithEmailAndPassword, onAuthStatechanged,
 } from '';
 
 const auth = getAuth();
+
+export const stateChange = (callback) => {
+    ontAuthStateChanged(auth,callback);git 
+}
 
 export const signIn = async (email, password) => {
     try {
