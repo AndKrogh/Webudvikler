@@ -1,0 +1,6 @@
+installere sass til vue projekt:
+
+vim package
+npm install --save-dev sass
+
+npm install -D sass
